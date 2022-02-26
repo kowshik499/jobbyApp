@@ -1,0 +1,11 @@
+.filter-input-cont {
+  margin-bottom: 10px;
+  padding-left: 0px;
+}
+
+.filter-input-label {
+  color: #f1f5f9;
+  font-size: 13px;
+  font-family: 'Roboto';
+  margin-left: 5px;
+}
