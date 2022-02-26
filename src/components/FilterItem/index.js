@@ -1,7 +1,8 @@
 import './index.css'
 
 const FilterItem = props => {
-  const {onChangeCheckboxInput, children, value} = props
+  const {onChangeCheckboxInput, itemDetails} = props
+  const {label, employmentTypeId} = itemDetails
   const onClickCheckbox = event => {
     onChangeCheckboxInput(event.target.value)
   }
@@ -9,12 +10,12 @@ const FilterItem = props => {
     <li className="filter-input-cont">
       <input
         type="checkbox"
-        id={value}
+        id={employmentTypeId}
         onChange={onClickCheckbox}
-        value={value}
+        value={employmentTypeId}
       />
-      <label htmlFor={value} className="filter-input-label">
-        {children}
+      <label htmlFor={employmentTypeId} className="filter-input-label">
+        {label}
       </label>
     </li>
   )

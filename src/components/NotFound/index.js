@@ -1,10 +1,10 @@
-import Header from '../Header'
+import Head from '../Head'
 
 import './index.css'
 
 const NotFound = () => (
   <>
-    <Header />
+    <Head />
     <div className="not-found-cont">
       <img
         src="https://assets.ccbp.in/frontend/react-js/jobby-app-not-found-img.png"

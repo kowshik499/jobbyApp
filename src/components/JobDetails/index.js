@@ -5,7 +5,7 @@ import {ImNewTab} from 'react-icons/im'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 
-import Header from '../Header'
+import Head from '../Head'
 import SkillItem from '../SkillItem'
 import SimilarJobItem from '../SimilarJobItem'
 
@@ -221,7 +221,7 @@ class JobDetails extends Component {
   render() {
     return (
       <>
-        <Header />
+        <Head />
         <div className="app-cont">{this.renderJobDetails()}</div>
       </>
     )

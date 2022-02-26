@@ -1,12 +1,12 @@
 import {Link} from 'react-router-dom'
 
-import Header from '../Header'
+import Head from '../Head'
 
 import './index.css'
 
 const Home = () => (
   <>
-    <Header />
+    <Head />
     <div className="home-cont">
       <div className="home-content">
         <h1 className="home-content-head">Find The Job That Fits Your Life</h1>

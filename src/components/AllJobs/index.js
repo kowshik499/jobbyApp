@@ -5,7 +5,7 @@ import {BsSearch} from 'react-icons/bs'
 
 import FilterItem from '../FilterItem'
 import FilterItem2 from '../FilterItem2'
-import Header from '../Header'
+import Head from '../Head'
 import JobCard from '../JobCard'
 
 import './index.css'
@@ -55,7 +55,7 @@ const statusConstants = {
   initial: 'INITIAL',
 }
 
-class Jobs extends Component {
+class AllJobs extends Component {
   state = {
     userProfileDetails: [],
     userProfileStatus: statusConstants.initial,
@@ -90,8 +90,8 @@ class Jobs extends Component {
     const {name, profileImageUrl, shortBio} = userProfileDetails
     return (
       <div className="profile-success-cont">
-        <img src={profileImageUrl} alt={name} className="profile-img" />
-        <p className="profile-name">{name}</p>
+        <img src={profileImageUrl} alt="profile" className="profile-img" />
+        <h1 className="profile-name">{name}</h1>
         <p className="profile-bio">{shortBio}</p>
       </div>
     )
@@ -176,10 +176,8 @@ class Jobs extends Component {
           <FilterItem
             onChangeCheckboxInput={this.onChangeEmploymentFilter}
             key={eachItem.employmentTypeId}
-            value={eachItem.employmentTypeId}
-          >
-            {eachItem.label}
-          </FilterItem>
+            itemDetails={eachItem}
+          />
         ))}
       </ul>
     </>
@@ -197,14 +195,16 @@ class Jobs extends Component {
           <FilterItem2
             onChangeCheckboxInput={this.onChangeSalaryFilter}
             key={eachItem.salaryRangeId}
-            value={eachItem.salaryRangeId}
-          >
-            {eachItem.label}
-          </FilterItem2>
+            itemDetails={eachItem}
+          />
         ))}
       </ul>
     </>
   )
+
+  onClickJobsRetry = () => {
+    this.getJobsDetails()
+  }
 
   renderJobsListFailureView = () => (
     <div className="jobs-list-failure-cont">
@@ -214,9 +214,13 @@ class Jobs extends Component {
       />
       <h1 className="jobs-failure-head">Oops! Something Went Wrong</h1>
       <p className="jobs-failure-para">
-        We cannot seem to find the page you are looking for.
+        We cannot seem to find the page you are looking for
       </p>
-      <button className="retry-btn" type="button" onClick={this.getJobsDetails}>
+      <button
+        className="retry-btn"
+        type="button"
+        onClick={this.onClickJobsRetry}
+      >
         Retry
       </button>
     </div>
@@ -233,7 +237,7 @@ class Jobs extends Component {
           />
           <h1 className="jobs-failure-head">No Jobs Found</h1>
           <p className="jobs-failure-para">
-            We could not find any jobs. Try another filter.
+            We could not find any jobs. Try other filters
           </p>
         </div>
       )
@@ -311,7 +315,7 @@ class Jobs extends Component {
     const {searchInput} = this.state
     return (
       <>
-        <Header />
+        <Head />
         <div className="main-cont">
           <div className="jobs-and-filters-cont">
             <div className="filters-cont">
@@ -348,4 +352,4 @@ class Jobs extends Component {
   }
 }
 
-export default Jobs
+export default AllJobs

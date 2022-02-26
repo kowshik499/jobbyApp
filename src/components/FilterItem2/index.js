@@ -1,7 +1,8 @@
 import './index.css'
 
 const FilterItem2 = props => {
-  const {onChangeCheckboxInput, children, value} = props
+  const {onChangeCheckboxInput, itemDetails} = props
+  const {label, salaryRangeId} = itemDetails
   const onClickCheckbox = event => {
     onChangeCheckboxInput(event.target.value)
   }
@@ -9,13 +10,13 @@ const FilterItem2 = props => {
     <li className="filter-input-cont">
       <input
         type="radio"
-        id={value}
+        id={salaryRangeId}
         onChange={onClickCheckbox}
-        value={value}
+        value={salaryRangeId}
         name="salary"
       />
-      <label htmlFor={value} className="filter-input-label">
-        {children}
+      <label htmlFor={salaryRangeId} className="filter-input-label">
+        {label}
       </label>
     </li>
   )
