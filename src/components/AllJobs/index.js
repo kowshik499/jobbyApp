@@ -316,7 +316,7 @@ class AllJobs extends Component {
     return (
       <>
         <Head />
-        <div className="main-cont">
+        <div className="all-jobs-main-cont">
           <div className="jobs-and-filters-cont">
             <div className="filters-cont">
               {this.renderUserProfileView()}

@@ -100,7 +100,7 @@ class Login extends Component {
       return <Redirect to="/" />
     }
     return (
-      <div className="main-cont">
+      <div className="login-main-cont">
         <form className="login-form" onSubmit={this.onSubmitForm}>
           <img
             src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
